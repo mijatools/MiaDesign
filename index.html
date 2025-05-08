@@ -11,7 +11,212 @@
   <link rel="stylesheet" href="css/estilos.css">
   <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
 </head>
+
+
+<style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+    }
+    
+    .hero-section {
+      background: linear-gradient(135deg, #fff6fa 0%, #fff 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 5rem 0;
+    }
+    
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(216, 27, 96, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+      top: -100px;
+      right: 10%;
+      z-index: 0;
+    }
+    
+    .hero-section::after {
+      content: "";
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(216, 27, 96, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+      bottom: -200px;
+      left: 5%;
+      z-index: 0;
+    }
+    
+    /* Botones con corrección de hover */
+    .btn-mia {
+      background-color: #d81b60;
+      color: white !important; /* Forzar color blanco siempre */
+      border-radius: 50px;
+      padding: 12px 30px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: 2px solid #d81b60;
+    }
+    
+    .btn-mia:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(216, 27, 96, 0.3);
+      background-color: #c2185b !important; /* Color ligeramente más oscuro en hover */
+    }
+    
+    .btn-outline-mia {
+      color: #333 !important;
+      background-color: transparent;
+      border: 2px solid #333;
+      border-radius: 50px;
+      padding: 12px 30px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-outline-mia:hover {
+      background-color: #333 !important;
+      color: white !important;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Tarjeta creativa adaptada para versión gratuita */
+    .creative-card {
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.5s ease;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+    
+    .creative-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(216, 27, 96, 0.25);
+    }
+    
+    /* Imagen adaptada para versión gratuita */
+    .card-img-container {
+      height: 350px;
+      background-color: #f8f9fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .card-img-container img {
+      transition: all 0.5s ease;
+      max-width: 100%;
+      max-height: 100%;
+    }
+    
+    .creative-card:hover .card-img-container img {
+      transform: scale(1.05);
+    }
+    
+    /* Panel mejorado y simplificado */
+    .card-panel {
+      padding: 20px;
+      background-color: white;
+      border-top: 3px solid #d81b60;
+    }
+    
+    .badge-mia {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #d81b60;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 50px;
+      font-weight: 500;
+      z-index: 3;
+      transform: rotate(5deg);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .shape-decorator {
+      position: absolute;
+      border-radius: 50%;
+      background-color: rgba(216, 27, 96, 0.1);
+      z-index: -1;
+      transition: all 0.5s ease;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .fade-in-up {
+      animation: fadeInUp 1s ease-out forwards;
+      opacity: 0;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .delay-1 {
+      animation-delay: 0.2s;
+    }
+    
+    .delay-2 {
+      animation-delay: 0.4s;
+    }
+    
+    .delay-3 {
+      animation-delay: 0.6s;
+    }
+    
+    .floating {
+      animation: floating 3s ease-in-out infinite;
+    }
+    
+    @keyframes floating {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+    
+    /* Estilo para overlay simple que funciona en versión gratuita */
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      background-color: rgba(216, 27, 96, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      color: #d81b60;
+      font-size: 1.5rem;
+    }
+  </style>
+
+
+
 <body>
+
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-magenta shadow-sm sticky-top">
@@ -127,40 +332,70 @@
     </button>
 </div>
 
+
 <div class="container-fluid px-0">
-  <div class="bg-light py-5" style="background: linear-gradient(135deg, #fff6fa 0%, #fff 100%);">
+  <div class="hero-section">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-6 mb-4 mb-lg-0">
-          <h1 class="display-4 fw-bold" style="color: #d81b60;">
-            Bienvenido a <span class="position-relative">Mia Design<span class="position-absolute" style="height: 8px; width: 100%; bottom: 5px; left: 0; background-color: rgba(216, 27, 96, 0.2); z-index: -1;"></span></span>
+        <div class="col-lg-6 mb-4 mb-lg-0 hero-content">
+          <!-- Eliminado el efecto de línea recta debajo de "Mia Design" -->
+          <h1 class="display-4 fw-bold fade-in-up" style="color: #d81b60;">
+            Bienvenido a Mia Design
           </h1>
-          <p class="lead mb-4">Diseños creativos y personalizados para hacer brillar tu marca en cualquier espacio.</p>
-          <div class="d-flex flex-wrap gap-2">
-            <a href="#contacto" class="btn btn-lg shadow-sm" style="background-color: #d81b60; color: white;">Contáctanos</a>
-            <a href="#galeria" class="btn btn-lg btn-outline-dark">Ver Trabajos</a>
+          <p class="lead mb-4 fade-in-up delay-1">Diseños creativos y personalizados para hacer brillar tu marca en cualquier espacio.</p>
+          <div class="d-flex flex-wrap gap-3 fade-in-up delay-2">
+            <!-- Botones corregidos para mantener color en hover -->
+            <a href="#contacto" class="btn btn-mia">
+              <i class="fas fa-envelope me-2"></i>Contáctanos
+            </a>
+            <a href="#galeria" class="btn btn-outline-mia">
+              <i class="fas fa-images me-2"></i>Ver Trabajos
+            </a>
           </div>
+          
+          <!-- Elementos decorativos animados -->
+          <div class="position-absolute shape-decorator floating" style="width: 80px; height: 80px; top: 10%; left: 0%;"></div>
+          <div class="position-absolute shape-decorator" style="width: 40px; height: 40px; bottom: 20%; right: 10%;"></div>
         </div>
-        <div class="col-lg-6 text-center">
-          <div class="position-relative" style="max-width: 450px; margin: 0 auto;">
-            <div class="shadow-lg rounded-4 overflow-hidden">
-              <img src="/api/placeholder/600/350" alt="Diseños creativos" class="img-fluid" />
+        
+        <div class="col-lg-6 text-center fade-in-up delay-3">
+          <div class="position-relative mx-auto" style="max-width: 500px;">
+            <!-- Tarjeta rediseñada para versión gratuita de MDBootstrap -->
+            <div class="creative-card">
+              <!-- Reemplazado imagen placeholder con div de color + icono -->
+              <div class="card-img-container">
+                <div style="text-align: center;">
+                  <i class="fas fa-pencil-ruler" style="font-size: 4rem; color: #d81b60; margin-bottom: 10px;"></i>
+                  <h3 style="color: #333;">Creatividad en Diseño</h3>
+                </div>
+              </div>
+              
+              <span class="badge-mia">
+                <i class="fas fa-star me-1"></i>Destacado
+              </span>
+              
+              <!-- Panel de información simplificado -->
+              <div class="card-panel">
+                <h4 style="color: #d81b60; font-weight: 600;">Diseños que Inspiran</h4>
+                <p>Creamos experiencias visuales únicas que conectan con tu audiencia y elevan tu marca.</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                  <span class="text-muted"><i class="fas fa-pencil-alt me-1"></i>Personalizado</span>
+                  <a href="#servicios" class="text-decoration-none" style="color: #d81b60;">
+                    Ver servicios <i class="fas fa-arrow-right ms-1"></i>
+                  </a>
+                </div>
+              </div>
             </div>
+            
             <!-- Elementos decorativos -->
-            <div class="position-absolute" style="top: -15px; right: -15px; width: 80px; height: 80px; border-radius: 50%; background-color: rgba(216, 27, 96, 0.1); z-index: -1;"></div>
-            <div class="position-absolute" style="bottom: -20px; left: -20px; width: 120px; height: 120px; border-radius: 50%; background-color: rgba(216, 27, 96, 0.1); z-index: -1;"></div>
+            <div class="position-absolute shape-decorator" style="top: -25px; right: -25px; width: 100px; height: 100px;"></div>
+            <div class="position-absolute shape-decorator" style="bottom: -30px; left: -30px; width: 150px; height: 150px;"></div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-
-
 
 
 
@@ -196,4 +431,5 @@
 
 
 </body>
+
 </html>
