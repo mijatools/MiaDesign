@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mia Design</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"rel="stylesheet"/>
+  <link  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css"rel="stylesheet"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+  <link rel="stylesheet" href="css/estilos.css">
+
+ 
+</head>
+<body>
+<style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+    }
+    :root {
+      --magenta-primary: #e91e63;
+      --magenta-light: #f48fb1;
+      --magenta-dark: #ff3180;
+      --magenta-gradient: linear-gradient(40deg, #ff3180, #fc009c);
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+    }
+    
+    .contact-section {
+      padding: 100px 0;
+      background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), 
+                  url('https://mdbootstrap.com/img/Photos/Others/images/91.jpg');
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+    }
+    
+    .contact-header {
+      margin-bottom: 60px;
+    }
+    
+    .contact-header h2 {
+      font-weight: 700;
+      color: var(--magenta-dark);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+    
+    .contact-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: var(--magenta-gradient);
+      border-radius: 10px;
+    }
+    
+    .contact-info-item {
+      padding: 30px 20px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(245, 2, 123, 0.05);
+      margin-bottom: 30px;
+      background-color: white;
+      border-bottom: 3px solid transparent;
+    }
+    
+    .contact-info-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(233, 30, 99, 0.1);
+      border-bottom: 3px solid var(--magenta-primary);
+    }
+    
+    .contact-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--magenta-gradient);
+      color: white;
+      font-size: 30px;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-info-item:hover .contact-icon {
+      transform: rotateY(360deg);
+    }
+    
+    .contact-info-title {
+      font-weight: 600;
+      color: var(--magenta-dark);
+      margin-bottom: 15px;
+    }
+    
+    .contact-form {
+      padding: 40px;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0 10px 30px rgba(255, 4, 129, 0.08);
+    }
+    
+    .form-outline .form-control:focus ~ .form-label {
+      color: var(--magenta-primary);
+    }
+    
+    .form-outline .form-control:focus ~ .form-notch .form-notch-middle,
+    .form-outline .form-control:focus ~ .form-notch .form-notch-leading,
+    .form-outline .form-control:focus ~ .form-notch .form-notch-trailing {
+      border-color: var(--magenta-primary);
+      border-top: 0;
+    }
+    
+    .btn-contact {
+      background: var(--magenta-gradient);
+      border: none;
+      padding: 12px 30px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      border-radius: 30px;
+      box-shadow: 0 8px 20px rgba(248, 0, 112, 0.31);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-contact:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(233, 30, 99, 0.4);
+    }
+    
+    .map-container {
+      overflow: hidden;
+      position: relative;
+      height: 400px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(241, 3, 126, 0.08);
+    }
+    
+    .map-container iframe {
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    }
+    
+    /* Animaciones */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animated {
+      animation-duration: 1s;
+      animation-fill-mode: both;
+    }
+    
+    .fadeInUp {
+      animation-name: fadeInUp;
+    }
+    
+    .delay-1 {
+      animation-delay: 0.2s;
+    }
+    
+    .delay-2 {
+      animation-delay: 0.4s;
+    }
+    
+    .delay-3 {
+      animation-delay: 0.6s;
+    }
+    
+    .delay-4 {
+      animation-delay: 0.8s;
+    }
+  </style>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-magenta shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><img src="img/logo/logo.svg" alt="Logo Mia Design" style="height: 40px; width: auto;"></i>Mia Design</a>
+    
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html"><i class="fas fa-home fa-fw"></i> Inicio</a>
+        </li>
+
+        <!-- Dropdown Productos -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="productosDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-box-open fa-fw"></i> Productos
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="productosDropdown">
+            <li><a class="dropdown-item" href="poleras.html"><i class="fas fa-tshirt"></i> Poleras Sublimadas</a></li>
+            <li><a class="dropdown-item" href="#banners"><i class="fas fa-image"></i> Banners</a></li>
+            <li><a class="dropdown-item" href="#trupan"><i class="fas fa-square"></i> Trupán Adhesivo</a></li>
+            <li><a class="dropdown-item" href="#stickers"><i class="fas fa-sticky-note"></i> Stickers</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown Servicios -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="serviciosDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-tools fa-fw"></i> Servicios
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="serviciosDropdown">
+            <li><a class="dropdown-item" href="#diseno"><i class="fas fa-pencil-ruler"></i> Diseño Gráfico</a></li>
+            <li><a class="dropdown-item" href="#impresion"><i class="fas fa-print"></i> Impresión Gran Formato</a></li>
+            <li><a class="dropdown-item" href="#asesoria"><i class="far fa-lightbulb"></i> Asesoría Visual</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#galeria"><i class="fas fa-images fa-fw"></i> Galería</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="nosotros.html"><i class="fas fa-users fa-fw"></i> Nosotros</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="contactos.html"><i class="fas fa-envelope fa-fw"></i> Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+ <section id="contacto" class="contact-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8 text-center">
+          <div class="contact-header animated fadeInUp">
+            <h2>Contáctanos</h2>
+            <p class="text-muted mt-4">¿Tienes algún proyecto en mente? ¡Estamos aquí para ayudarte! Contáctanos y comencemos a diseñar tu próximo gran proyecto juntos.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <!-- Información de Contacto -->
+        <div class="col-lg-4">
+          <div class="contact-info-item text-center animated fadeInUp delay-1">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h5 class="contact-info-title">Ubicación</h5>
+            <p class="mb-0">Final panamericana</p>
+            <p> +591 BOLIVIA</p>
+          </div>
+          
+          <div class="contact-info-item text-center animated fadeInUp delay-2">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <h5 class="contact-info-title">Teléfono</h5>
+            <p class="mb-0">+123 456 7890</p>
+            <p>Lunes a Viernes: 9am - 7pm</p>
+          </div>
+          
+          <div class="contact-info-item text-center animated fadeInUp delay-3">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h5 class="contact-info-title">Email</h5>
+            <p class="mb-0">miadesing@gmail.com</p>
+            <p>mijares@hotmail.com</p>
+          </div>
+          
+          <div class="contact-info-item text-center animated fadeInUp delay-4">
+            <div class="contact-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h5 class="contact-info-title">Redes Sociales</h5>
+            <div class="mt-3">
+              <a href="#" class="btn btn-floating btn-sm" style="background-color: var(--magenta-primary);">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="btn btn-floating btn-sm mx-2" style="background-color: var(--magenta-primary);">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="btn btn-floating btn-sm" style="background-color: var(--magenta-primary);">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="btn btn-floating btn-sm mx-2" style="background-color: var(--magenta-primary);">
+                <i class="fab fa-pinterest"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Formulario de Contacto -->
+        <div class="col-lg-8">
+          <div class="contact-form animated fadeInUp delay-2">
+            <h4 class="mb-4 text-center" style="color: var(--magenta-dark);">Envíanos un Mensaje</h4>
+            <form>
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="contactName" class="form-control" />
+                    <label class="form-label" for="contactName">Nombre</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="email" id="contactEmail" class="form-control" />
+                    <label class="form-label" for="contactEmail">Email</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mb-4">
+                <div class="form-outline">
+                  <input type="text" id="contactSubject" class="form-control" />
+                  <label class="form-label" for="contactSubject">Asunto</label>
+                </div>
+              </div>
+              
+              <div class="mb-4">
+                <div class="form-outline">
+                  <textarea class="form-control" id="contactMessage" rows="4"></textarea>
+                  <label class="form-label" for="contactMessage">Mensaje</label>
+                </div>
+              </div>
+              
+              <div class="text-center">
+                <button type="submit" class="btn btn-contact">
+                  <i class="fas fa-paper-plane me-2"></i>Enviar Mensaje
+                </button>
+              </div>
+            </form>
+          </div>
+          
+          <!-- Google Maps -->
+          <div class="mt-5 map-container animated fadeInUp delay-3">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.67890!2d-74.006!3d40.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjEiTiA3NMKwMDAnMjEuNiJX!5e0!3m2!1ses!2sus!4v1619699159501!5m2!1ses!2sus" 
+                  style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+ <!-- FOOTER MODERNO 2025 -->
+<footer class="bg-dark text-white py-3 fixed-bottom shadow-lg" style="backdrop-filter: blur(5px); background-color: rgba(33, 37, 41, 0.9); z-index: 1030;">
+    <div class="container d-flex justify-content-between align-items-center">
+      <!-- Íconos sociales -->
+      <div class="social-icons">
+        <a href="#" class="text-white mx-2 social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-white mx-2 social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-white mx-2 social-link"><i class="fab fa-whatsapp"></i></a>
+      </div>
+  
+      <!-- Texto con animación -->
+      <small class="mb-0 animated-text">&copy; 2025 Mia Design. Todos los derechos reservados.</small>
+    </div>
+  </footer>
+
+  <!-- JavaScript para Animaciones -->
+  <script>
+    // Animación de elementos cuando son visibles
+    document.addEventListener("DOMContentLoaded", function() {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2
+      };
+      
+      const observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fadeInUp');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+      
+      document.querySelectorAll('.animated').forEach(el => {
+        el.classList.remove('fadeInUp');
+        observer.observe(el);
+      });
+    });
+    
+    // Efecto hover para campos del formulario
+    const formControls = document.querySelectorAll('.form-control');
+    formControls.forEach(input => {
+      input.addEventListener('focus', function() {
+        this.parentElement.classList.add('focused');
+      });
+      
+      input.addEventListener('blur', function() {
+        if (this.value === '') {
+          this.parentElement.classList.remove('focused');
+        }
+      });
+    });
+    
+    // Navbar cambio de color al scroll
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        navbar.style.boxShadow = '0 4px 12px 0 rgba(233, 30, 99, 0.1)';
+      } else {
+        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        navbar.style.boxShadow = 'none';
+      }
+    });
+  </script>
+  
+ 
+  </body>
+  </html>
