@@ -212,7 +212,186 @@
       color: #d81b60;
       font-size: 1.5rem;
     }
+
+     /* de esta parte es del footer */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #2b2a33 0%, #16213e 50%, #18171c 100%);
+            width: 100%;
+            padding: 1rem 0;
+            border-top: 3px solid #e91e63;
+            box-shadow: 0 -10px 30px rgba(233, 30, 99, 0.3);
+            overflow: hidden;
+            z-index: 1030;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                #e91e63 20%, 
+                #f06292 40%, 
+                #ec407a 60%, 
+                #e91e63 80%, 
+                transparent 100%);
+            filter: blur(1px);
+            box-shadow: 0 0 20px rgba(233, 30, 99, 0.8);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .bolivia-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .flag-bolivia {
+            width: 30px;
+            height: 20px;
+            border-radius: 3px;
+            background: linear-gradient(to bottom, 
+                #CE1126 0%, #CE1126 33%, 
+                #F9E300 33%, #F9E300 66%, 
+                #007934 66%, #007934 100%);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .company-name {
+            font-size: 1rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #e91e63, #f06292, #ec407a);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .location {
+            color: #b0b3c1;
+            font-size: 0.7rem;
+            font-weight: 300;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+            color: #ffffff;
+            padding: 0.4rem 0.8rem;
+            background: rgba(233, 30, 99, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(233, 30, 99, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            text-decoration: none;
+        }
+
+        .phone:hover {
+            background: rgba(233, 30, 99, 0.2);
+            transform: translateY(-1px);
+            box-shadow: 0 3px 10px rgba(233, 30, 99, 0.3);
+            color: #ffffff;
+        }
+
+        .phone-icon {
+            color: #e91e63;
+            animation: ring 2s ease-in-out infinite;
+        }
+
+        @keyframes ring {
+            0%, 100% { transform: rotate(0deg); }
+            10%, 30% { transform: rotate(-10deg); }
+            20% { transform: rotate(10deg); }
+        }
+
+        .copyright {
+            color: #8892b0;
+            font-size: 0.7rem;
+            line-height: 1.2;
+        }
+
+        .highlight {
+            color: #e91e63;
+            font-weight: 600;
+        }
+
+        .mountain-silhouette {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
+            clip-path: polygon(0 100%, 15% 40%, 35% 60%, 60% 30%, 80% 50%, 100% 20%, 100% 100%);
+            z-index: 1;
+        }
+
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            align-items: flex-start;
+        }
+
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            .footer-left,
+            .footer-right {
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+            }
+            
+            .company-name {
+                font-size: 0.9rem;
+            }
+            
+            .phone {
+                font-size: 0.8rem;
+            }
+
+            .footer {
+                padding: 0.8rem 0;
+            }
+        }
   </style>
+
 
 
 
@@ -260,7 +439,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#galeria"><i class="fas fa-images fa-fw"></i> Galería</a>
+          <a class="nav-link" href="galeria.html"><i class="fas fa-images fa-fw"></i> Galería</a>
         </li>
 
         <li class="nav-item">
@@ -480,27 +659,42 @@
 
 
 
-
-
-
-
-
-
-
-
-<!-- FOOTER -->
-<footer class="text-white text-center py-1">
-  <div class="container">
-    
-    
-    <div class="mt-3">
-      <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
-      <a href="#" class="text-white mx-2"><i class="fab fa-whatsapp"></i></a>
-    </div>
-    <small class="mt-3 d-block">&copy; 2025 Mia Design. Todos los derechos reservados.</small>
-  </div>
-</footer>
+ <!-- Footer -->
+    <footer class="footer">
+        <div class="mountain-silhouette"></div>
+        
+        <div class="container-fluid footer-content">
+            <div class="row h-100 align-items-center">
+                <!-- Columna Izquierda -->
+                <div class="col-md-6">
+                    <div class="footer-left">
+                        <!-- Logo y Empresa -->
+                        <div class="bolivia-logo mb-1">
+                            <div class="flag-bolivia"></div>
+                            <div>
+                                <div class="company-name">Mia Desing</div>
+                                <div class="location">Cochabamba, Bolivia</div>
+                                
+                                
+                            </div>
+                        </div>
+                        
+                      
+                    </div>
+                </div>
+                
+                <!-- Columna Derecha -->
+                <div class="col-md-6">
+                    <div class="footer-right">
+                        <div class="copyright">
+                            <div>© 2025 <span class="highlight">Cel: 65321645</span></div>
+                            <div>Todos los derechos reservados</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
 
